@@ -246,6 +246,8 @@ section {
 
 .project-card img {
     width: 20vw;
+    height: 15vw;
+    object-fit: cover;
     border-radius: 1rem;    
 }
 
