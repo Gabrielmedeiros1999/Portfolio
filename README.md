@@ -1,6 +1,6 @@
-# 💼 Portfólio Frontend
+# 💼 Portfólio Full Stack
 
-Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e informações de contato na área de Desenvolvimento Frontend.
+Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e informações de contato na área de Desenvolvimento Full Stack.
 
 ## 🚀 Tecnologias utilizadas
 
