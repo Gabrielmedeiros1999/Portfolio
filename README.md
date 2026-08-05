@@ -1,6 +1,6 @@
-# 💼 Portfólio Full Stack
+# 💼 Portfólio 
 
-Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e informações de contato na área de Desenvolvimento Full Stack.
+Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e informações de contato na área de Desenvolvimento de Software.
 
 ## 🚀 Tecnologias utilizadas
 
