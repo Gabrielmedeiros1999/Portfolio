@@ -220,7 +220,7 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
@@ -394,6 +394,9 @@ footer ul li a {
     }
     .about-info{
         font-size: 1rem;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     .project-card img {
     width: 35vw;   
