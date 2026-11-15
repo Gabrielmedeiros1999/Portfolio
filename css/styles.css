@@ -139,6 +139,8 @@ section {
 
 .btn-group {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -218,38 +220,6 @@ section {
     background: linear-gradient(to bottom, rgb(0, 157, 255), rgb(255, 0, 255));
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.project-card {
-    padding: 3rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 1.5rem;
-    border: 2px solid #181717;
-    border-radius: 3rem;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.project-card:hover {
-    background-color: #181717;
-    color: #f5f0f0;
-    transform: translateY(-10px)scale(1.02);
-}
-
-.project-card img {
-    width: 20vw;
-    height: 15vw;
-    object-fit: cover;
-    border-radius: 1rem;    
-}
 
 
 .project-card:hover .btn {
@@ -268,9 +238,88 @@ section {
     font-weight: 500;
 }
 
-.project-card p {
-    min-height: 80px;
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
+
+.projects-grid {
+    flex: 1;
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;          /* Firefox */
+    /* padding evita cortar o efeito de hover (translateY) do card */
+    padding: 1.5rem 1rem;
+}
+
+.projects-grid::-webkit-scrollbar {
+    display: none;                  /* Chrome/Safari */
+}
+
+.project-card {
+    flex: 0 0 calc((100% - 4rem) / 3);   /* 3 cards visíveis */
+    scroll-snap-align: start;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 1.5rem;
+    border: 2px solid #181717;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    background-color: #181717;
+    color: #f5f0f0;
+    transform: translateY(-10px) scale(1.02);
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.project-card p {
+    flex-grow: 1;   /* empurra os botões pro final, alinhando todos os cards */
+}
+
+.project-card .btn-group {
+    margin-top: auto;
+}
+
+/* Botões do carrossel */
+.carousel-btn {
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 2px solid #181717;
+    background: none;
+    font-size: 1.2rem;
+    color: inherit;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background-color: #181717;
+    color: #f5f0f0;
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
 
 .input-box {
     display: flex;
@@ -366,6 +415,9 @@ footer ul li a {
     .input-box i {
         font-size: 2.5rem;
     }
+    .project-card {
+    flex-basis: calc((100% - 2rem) / 2);
+    }
 }
 
 @media(max-width:768px) {
@@ -395,19 +447,24 @@ footer ul li a {
     .about-info{
         font-size: 1rem;
     }
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    /* novo: carrossel com 1 card por vez */
+    .project-card {
+        flex-basis: 100%;
     }
-    .project-card img {
-    width: 35vw;   
+    .carousel-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
     }
+
     .info-box h1 {
         font-size: 2rem;
     }
     .info-box span {
         font-size: 1rem;
     }
-   
+
 }
 
 @media(max-width:600px) {

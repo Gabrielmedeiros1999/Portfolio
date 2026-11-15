@@ -75,7 +75,11 @@
     </section>
     <section id="projects" class="projects">
         <h2 class="section-title">Meus Projetos</h2>
-        <div class="projects-grid">
+        <div class="carousel">
+         <button class="carousel-btn" id="prev-btn" aria-label="Projeto anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="projects-grid" id="projects-track">
             <div class="project-card">
                 <img src="img/project-1.jpeg" alt="Projeto MySquire">
                 <h3>MySquire</h3>
@@ -95,6 +99,7 @@
                 </p>
                 <div class="btn-group">
                     <a href="https://github.com/Gabrielmedeiros1999/lpe_trabalho1_front" target="_blank" class="btn">GitHub repo</a>
+                    <a href="https://lpe-trabalho1-front.vercel.app/" target="_blank" class="btn">Ver Deploy</a>
                 </div>
             </div>
             <div class="project-card">
@@ -115,9 +120,14 @@
                 </p>
                 <div class="btn-group">
                     <a href="https://github.com/Gabrielmedeiros1999/riftbound" target="_blank" class="btn">GitHub repo</a>
+                    <a href="https://riftbound-neon.vercel.app/" target="_blank" class="btn">Ver Deploy</a>
                 </div>
             </div>
         </div>
+          <button class="carousel-btn" id="next-btn" aria-label="Próximo projeto">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+       </div> 
     </section>
     <section id="contact" class="contact">
         <div class="input-box">
